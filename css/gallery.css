@@ -1,0 +1,112 @@
+:root {
+    --font-primary: 'Arial', sans-serif;
+    --font-secondary: 'Times New Roman', Times, serif;
+    --bg-color: whitesmoke;
+    --caption-bg-color: #4598db;
+    --image-hover-filter: grayscale(0.5);
+    --image-active-filter: grayscale(0);
+    --primary-color: #119e32;
+    --secondary-color: #fff;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.myheading {
+    background-color: var(--primary-color);
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    color: var(--secondary-color);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+h1 span {
+    display: block;
+    font-size: 1rem;
+    color: #e0e0e0;
+    margin-top: 5px;
+}
+
+#gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 90%;
+}
+
+figure {
+    position: relative;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-image {
+    width: 100%;
+    border-radius: 10px;
+    transition: filter 0.3s;
+}
+
+.gallery-image:hover {
+    filter: var(--image-hover-filter);
+}
+
+figcaption {
+    font-size: 1.2rem;
+    font-family: var(--font-secondary);
+    background-color: var(--caption-bg-color);
+    color: var(--secondary-color);
+    padding: 15px;
+}
+
+ul {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+#thumbnails li {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+#thumbnails li img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: filter 0.3s;
+}
+
+#thumbnails li img:hover {
+    filter: brightness(0.8);
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    .myheading {
+        font-size: 1.2rem;
+    }
+    figcaption {
+        font-size: 1rem;
+    }
+}
